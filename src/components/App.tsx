@@ -1,10 +1,13 @@
 import {FC} from 'react';
 import {Header} from './header/header';
-//import {Todo} from '../types/data';
 import './App.css';
+import {Main} from './main/main';
 
 export const App: FC = () => {
     return <>
-        <Header/>
+        <div className='wrapper'>
+            <Header/>
+            <Main/>
+        </div>
     </>
 }

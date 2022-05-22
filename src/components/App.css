@@ -328,3 +328,14 @@ html {
 
 /*---------------------------------*/
 
+body {
+    background: #E5E5E5;
+}
+
+.wrapper {
+    width: 759px;
+    height: 456px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background: yellow;
+}
