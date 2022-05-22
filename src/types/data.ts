@@ -4,3 +4,7 @@ export interface Todo {
     date: string;
     complete: boolean;
 }
+
+export interface ButtonProps {
+    text: string;
+}
