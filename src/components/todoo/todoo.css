@@ -58,15 +58,17 @@
     margin-top: 23px;
     margin-right: 4px;
 }
+/*-----------------*/
 
-input[type="checkbox"]:checked,
-input[type="checkbox"]:not(:checked) {
+
+.todoo-check:checked,
+.todoo-check:not(:checked) {
     position: absolute;
     left: -9999px;
 }
 
-input[type="checkbox"]:checked + label,
-input[type="checkbox"]:not(:checked) + label {
+.todoo-check:checked + label,
+.todoo-check:not(:checked) + label {
     display: inline-block;
     position: relative;
     padding-left: 48px;
@@ -75,8 +77,8 @@ input[type="checkbox"]:not(:checked) + label {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked + label:before,
-input[type="checkbox"]:not(:checked) + label:before {
+.todoo-check:checked + label:before,
+.todoo-check:not(:checked) + label:before {
     content: "";
     position: absolute;
     left: 37px;
@@ -87,13 +89,13 @@ input[type="checkbox"]:not(:checked) + label:before {
     background-color: #D2D2D2;
 }
 
-input[type="checkbox"]:checked + label:before,
-input[type="checkbox"]:not(:checked) + label:before {
+.todoo-check:checked + label:before,
+.todoo-check:not(:checked) + label:before {
     border-radius: 2px;
 }
 
-input[type="checkbox"]:checked + label:after,
-input[type="checkbox"]:not(:checked) + label:after {
+.todoo-check:checked + label:after,
+.todoo-check:not(:checked) + label:after {
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;
@@ -102,8 +104,8 @@ input[type="checkbox"]:not(:checked) + label:after {
     transition: all 0.2s ease;
 }
 
-input[type="checkbox"]:checked + label:after,
-input[type="checkbox"]:not(:checked) + label:after {
+.todoo-check:checked + label:after,
+.todoo-check:not(:checked) + label:after {
     left: 46px;
     top: 30px;
     width: 18px;
@@ -118,10 +120,13 @@ input[type="checkbox"]:not(:checked) + label:after {
     transform: rotate(-45deg);
 }
 
-input[type="checkbox"]:not(:checked) + label:after {
+.todoo-check:not(:checked) + label:after {
     opacity: 0;
 }
 
-input[type="checkbox"]:checked + label:after {
+.todoo-check:checked + label:after {
     opacity: 1;
 }
+
+/*-----------------*/
+

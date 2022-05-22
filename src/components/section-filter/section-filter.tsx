@@ -8,7 +8,7 @@ export const SectionFilter:FC = () => {
         <Button text='Сегодня'/>
         <Button text='На неделю'/>
         <Calendar/>
-        <div>
+        <div className='filter-unfulfilled'>
             <input type='checkbox' id='unfulfilled'/>
             <label htmlFor='unfulfilled'>Только невыполненные</label>
         </div>

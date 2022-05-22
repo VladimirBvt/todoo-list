@@ -1,4 +1,9 @@
 .section-filter {
     width: 27%;
     background: #FFFFFF;
+    padding-left: 16px;
+}
+
+.filter-unfulfilled {
+    margin-top: 23px;
 }

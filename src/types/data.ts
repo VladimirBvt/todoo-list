@@ -8,3 +8,7 @@ export interface Todo {
 export interface ButtonProps {
     text: string;
 }
+
+export interface TodooProps {
+    id: string;
+}
