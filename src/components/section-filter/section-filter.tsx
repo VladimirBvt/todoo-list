@@ -12,6 +12,5 @@ export const SectionFilter:FC = () => {
             <input type='checkbox' id='unfulfilled'/>
             <label htmlFor='unfulfilled'>Только невыполненные</label>
         </div>
-
     </section>
 }

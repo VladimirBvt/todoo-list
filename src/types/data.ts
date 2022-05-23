@@ -1,9 +1,14 @@
-export interface Todo {
-    id: number;
-    title: string;
-    date: string;
-    complete: boolean;
+export interface TaskEntity {
+    id:	string;
+    name:	string;
+    shortDesc:	string;
+    fullDesc:	string;
+    date:	string;
+    status:	boolean;
+
 }
+
+export type Tasks = TaskEntity[];
 
 export interface ButtonProps {
     text: string;
