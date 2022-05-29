@@ -1,0 +1,66 @@
+.todoo-check:checked,
+.todoo-check:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.todoo-check:checked + label,
+.todoo-check:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 48px;
+    padding-top: 25px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.todoo-check:checked + label:before,
+.todoo-check:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 37px;
+    top: 22px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #717171;
+    background-color: #D2D2D2;
+}
+
+.todoo-check:checked + label:before,
+.todoo-check:not(:checked) + label:before {
+    border-radius: 2px;
+}
+
+.todoo-check:checked + label:after,
+.todoo-check:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.todoo-check:checked + label:after,
+.todoo-check:not(:checked) + label:after {
+    left: 46px;
+    top: 30px;
+    width: 18px;
+    height: 14px;
+    border-radius: 1px;
+    border-left: 4px solid #717171;
+    border-bottom: 4px solid #717171;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.todoo-check:not(:checked) + label:after {
+    opacity: 0;
+}
+
+.todoo-check:checked + label:after {
+    opacity: 1;
+}
