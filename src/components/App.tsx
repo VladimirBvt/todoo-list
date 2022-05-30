@@ -55,16 +55,29 @@ export const App: FC = () => {
     }, []);*/
 
 
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://83062280-a129-472d-afa5-afc557173f5b.mock.pstmn.io')
-            .then(result => result.json())
-            .then((data) => console.log(data))
+        fetch('https://todo.doczilla.pro/api/todos')
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
     }, []);
+
+    if(error) {
+
+    }
 
     return <>
         <div className='wrapper'>
