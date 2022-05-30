@@ -3,7 +3,8 @@ import {Header} from './header/header';
 import './App.css';
 import {Main} from './main/main';
 import {useState, useEffect} from 'react';
-import {Modal} from "./modal/modal";
+import {Modal} from './modal/modal';
+import {mockTodoos} from '../mocks/mocks';
 
 export const App: FC = () => {
     const [modalActive, setModalActive] = useState(false);
@@ -27,13 +28,13 @@ export const App: FC = () => {
     }, []);
 
     if(error) {
-
+        console.log(mockTodoos);
     }
 
     return <>
         <div className='wrapper'>
             <Header/>
-            <Main/>
+            <Main tasks={mockTodoos}/>
             <Modal active={modalActive} setActive={setModalActive}/>
         </div>
     </>

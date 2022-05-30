@@ -1,7 +1,12 @@
 import './todoo.css';
 import {FC} from 'react';
+import {TaskEntity} from '../../types/data';
 
-export const Todoo:FC = () => {
+type PropsTodoo = {
+    task: TaskEntity;
+}
+
+export const Todoo = (props:PropsTodoo) => {
     const getId = () => {
         return `check-${Math.random()}`;
     }
@@ -9,15 +14,15 @@ export const Todoo:FC = () => {
 
     return <div className='todoo'>
         <div className='todoo-text'>
-            <h3 className='todoo-title'>Название</h3>
-            <p className='todoo-description'>Описание</p>
+            <h3 className='todoo-title'>{props.task.name}</h3>
+            <p className='todoo-description'>{props.task.shortDesc}</p>
         </div>
         <div className='todoo-info'>
             <div className='todoo-check-wrap'>
                 <input type="checkbox" className='todoo-check' id={id}/>
                 <label htmlFor={id}>1</label>
             </div>
-            <p className='todoo-date'>08.05.2022 00:10</p>
+            <p className='todoo-date'>{props.task.date}</p>
         </div>
     </div>
 }
