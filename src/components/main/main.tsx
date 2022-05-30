@@ -1,11 +1,17 @@
 import './main.css';
 import {SectionFilter} from '../section-filter/section-filter';
-import {FC} from 'react';
 import {SectionList} from '../section-list/section-list';
+import {Tasks} from '../../types/data';
 
-export const Main:FC = () => {
+type PropsMain = {
+    tasks: Tasks;
+    active: boolean;
+    setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Main = (props:PropsMain) => {
     return <main className='main'>
         <SectionFilter/>
-        <SectionList/>
+        <SectionList tasks={props.tasks} active={props.active} setActive={props.setActive}/>
     </main>
 }
