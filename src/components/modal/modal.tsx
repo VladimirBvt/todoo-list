@@ -1,10 +1,12 @@
 import './modal.css';
-import {FC, useState} from "react";
-import {TodoCheckbox} from "../todo-checkbox/todo-checkbox";
+import {FC, useState} from 'react';
+import {TodoCheckbox} from '../todo-checkbox/todo-checkbox';
+import {TaskEntity} from '../../types/data';
 
 interface ModalProps {
     active: boolean;
     setActive: React.Dispatch<React.SetStateAction<boolean>>;
+    task: TaskEntity;
 }
 
 export const Modal: FC <ModalProps> = (props:ModalProps) => {
@@ -17,7 +19,7 @@ export const Modal: FC <ModalProps> = (props:ModalProps) => {
             <div className='modal__content'>
                 <header className='modal__header'>
                     <div className='modal__info'>
-                        <h1>Название</h1>
+                        <h1>Название{props.task.name}</h1>
                         <div>08.05.2022 00:10</div>
                     </div>
                     <TodoCheckbox/>
@@ -25,7 +27,7 @@ export const Modal: FC <ModalProps> = (props:ModalProps) => {
                 <div className='modal__full-description'>
                     Полное описание
                 </div>
-                <button className='modal__button' onClick={() => setActive(false)}>Готово</button>
+                <button className='modal__button' onClick={() => setActive(!active)}>Готово</button>
             </div>
         </div>
     </>

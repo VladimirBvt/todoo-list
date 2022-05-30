@@ -1,20 +1,17 @@
 import './section-list.css';
-import React, {FC, ReactChildren, ReactNode} from 'react';
+import React, {ReactNode} from 'react';
 import {Todoo} from '../todoo/todoo';
 import {Arrays} from '../arrays/arrays';
 import {Tasks} from '../../types/data';
 
 type PropsSectionList = {
     tasks: Tasks;
+    active: boolean;
+    setActive: React.Dispatch<React.SetStateAction<boolean>>;
     children?: ReactNode | ReactNode[];
 }
 
 export const SectionList = (props:PropsSectionList) => {
-    const renderTasks = (tasks:Tasks) => {
-        for (let i = 0; i < tasks.length; i ++) {
-            <Todoo key={i} task={tasks[i]}/>
-        }
-    };
 
     return <section className='section-list'>
         <div className='date-sort'>
@@ -24,8 +21,8 @@ export const SectionList = (props:PropsSectionList) => {
                 <span className='date-sort__button-text'>Сортировать по дате</span>
             </button>
         </div>
-        {props.tasks.map(task => (<Todoo key={task.id} task={task}/>))}
-        {/*{ props.tasks ? renderTasks(props.tasks) : '' }*/}
+
+        {props.tasks.map(task => (<Todoo key={task.id} task={task} active={props.active} setActive={props.setActive}/>))}
 
     </section>
 }

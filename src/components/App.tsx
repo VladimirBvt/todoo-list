@@ -28,14 +28,14 @@ export const App: FC = () => {
     }, []);
 
     if(error) {
-        console.log(mockTodoos);
+
     }
 
     return <>
         <div className='wrapper'>
             <Header/>
-            <Main tasks={mockTodoos}/>
-            <Modal active={modalActive} setActive={setModalActive}/>
+            <Main tasks={mockTodoos} active={modalActive} setActive={setModalActive}/>
+            {/*<Modal active={modalActive} setActive={setModalActive}/>*/}
         </div>
     </>
 }
