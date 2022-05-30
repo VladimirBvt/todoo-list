@@ -17,10 +17,9 @@ export const Todoo = (props:PropsTodoo) => {
     }
     const id = getId();
 
-    return <div className='todoo' onClick={(e) => {
+    return <div className='todoo' onClick={() => {
+        setActiveModal(true);
         console.log(111);
-        /*props.setActive(!props.active)*/
-        console.log(e.target);
     }}>
         <div className='todoo-text'>
             <h3 className='todoo-title'>{props.task.name}</h3>

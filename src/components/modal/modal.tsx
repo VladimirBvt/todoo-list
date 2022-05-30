@@ -1,5 +1,5 @@
 import './modal.css';
-import {FC, useState} from 'react';
+import {FC} from 'react';
 import {TodoCheckbox} from '../todo-checkbox/todo-checkbox';
 import {TaskEntity} from '../../types/data';
 
@@ -10,24 +10,25 @@ interface ModalProps {
 }
 
 export const Modal: FC <ModalProps> = (props:ModalProps) => {
-    const [active, setActive] = useState(props.active);
-
     return <>
-         <div className={active ? 'modal__overlay active' : 'modal__overlay'}>
+         <div className={props.active ? 'modal__overlay active' : 'modal__overlay'}>
          </div>
-         <div className={active ? 'modal active' : 'modal'}>
+         <div className={props.active ? 'modal active' : 'modal'}>
             <div className='modal__content'>
                 <header className='modal__header'>
                     <div className='modal__info'>
-                        <h1>Название{props.task.name}</h1>
-                        <div>08.05.2022 00:10</div>
+                        <h1>{props.task.name}</h1>
+                        <div>{props.task.date}</div>
                     </div>
                     <TodoCheckbox/>
                 </header>
                 <div className='modal__full-description'>
-                    Полное описание
+                    {props.task.fullDesc}
                 </div>
-                <button className='modal__button' onClick={() => setActive(!active)}>Готово</button>
+                <button className='modal__button' onClick={(e) => {
+                    e.stopPropagation();
+                    props.setActive(false)
+                }}>Готово</button>
             </div>
         </div>
     </>
