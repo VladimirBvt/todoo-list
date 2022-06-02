@@ -17,8 +17,8 @@ export const Modal: FC <ModalProps> = (props:ModalProps) => {
             <div className='modal__content'>
                 <header className='modal__header'>
                     <div className='modal__info'>
-                        <h1>{props.task.name}</h1>
-                        <div>{props.task.date}</div>
+                        <h1 className='modal__name'>{props.task.name}</h1>
+                        <div className='modal__date'>{props.task.date}</div>
                     </div>
                     <TodoCheckbox/>
                 </header>

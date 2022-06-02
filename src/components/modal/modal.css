@@ -1,6 +1,6 @@
 .modal {
     position: absolute;
-    width: 308px;
+    width: 318px;
     height: 377px;
     background: #FFFFFF;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
@@ -39,16 +39,31 @@
 }
 
 .modal__info {
+    width: 110px;
     padding-bottom: 15px;
 }
 
+.modal__name {
+    height: 50px;
+}
+
+.modal__date {
+    padding-top: 10px;
+}
+
 .modal__full-description {
+    height: 180px;
     padding-top: 11px;
+    overflow-y: scroll;
+}
+
+.modal__content {
+    position: relative;
 }
 
 .modal__button {
-    position: relative;
-    top: 200px;
+    position: absolute;
+    top: 346px;
     left: 180px;
     width: 89px;
     height: 21px;
