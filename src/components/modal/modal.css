@@ -48,7 +48,10 @@
 }
 
 .modal__date {
-    padding-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
 }
 
 .modal__full-description {
